@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+  
+  <!-- Style -->
+  <link rel="stylesheet" href="./style/main.css">
+  <link rel="stylesheet" href="./style/reloj.css"> 
+  <link rel="stylesheet" href="./style/temperatura.css">
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./boots/css/bootstrap.min.css">
+  <script type="text/javascript" src="./boots/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" 
+    integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" 
+    crossorigin="anonymous">
+  </script>
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous">
+  </script>
+
+  <!-- info -->
+  <title> Totem Estacion Junín </title>
+  <meta name="description"  content="Proyecto totem táctil en Estación Junín, ubicada sobre Calle Junín entre las Calles Córdoba y La Rioja. Posadas, Misiones"/>
+  <meta name="author"       content="LichaNano73" />
+  <meta name="copyright"    content="Centro de Monitoreo de MU - Secretaria de Movilidad Urbana" />
+  
+</head>
+
+<body>  
+  <div class="container-fluid" id="myBody">
+
+    <!-- Row 01 Contactos -->
+    <div class="row" id="row1">      
+      <img src="./img/elements/contactos.png" style="transform: scale(0.7);" >          
+    </div>
+
+    <!-- Row 02 Logo, Temperatura y Reloj -->
+    <div class="row" id="row2">
+      <div class="col-4" id="col-row2">
+        <img src="./img/logoPdas.png" alt="" srcset="" width="50%">
+        <img src="./img/logomu-gris.png" alt="" srcset="" width="50%" style="margin-left: 10px;">
+      </div>
+
+      <!-- Temperatura-->
+      <div class="col-4" id="col-row2">
+        
+        <div class="row-cols-2" id="myTemp">
+        </div>
+
+      </div>
+
+      <!-- Inicio Reloj-->
+      <div class="col-4" id="col-row2" >
+        <div class="wrap">
+            <div class="widge">
+                
+                <div class="fecha">
+                    <p id="diaSemana" class="diaSemana"></p>                
+                    <p id="dia" class="dia"></p>
+                    <p>de</p>
+                    
+                    <p id="mes" class="mes"></p>
+                    <p>-</p>
+                    <p id="year" class="year"></p>     
+                </div>
+                <div class="reloj">
+                    <p id="horas" class="horas"></p>
+                    <p>:</p>
+                    <p id="minutos" class="minutos"></p>
+                    <p>:</p>
+                    <div class="caja-seg">
+                        <p id="ampm" class="ampm"></p>
+                        <p id="segundos" class="segundos"></p>
+                    </div>            
+                </div>
+            </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- Row 03 Slider con Modal -->
+    <div class="carousel slide" id="row3"  data-bs-ride="carousel">
+      <div class="carousel-inner w-100">
+        
+        <div class="carousel-item active" data-bs-interval="20000">
+            <div class="row">
+              <img src="./img/sliders/sld1/sld1.2 - interplayas con horarios 01 23.jpg" class="d-block w-100" alt="img-sld 1">
+
+              <button type="button" class="btn btn-danger" id="btn-sld" data-bs-toggle="modal" data-bs-target="#modal-interplayas">
+                Más info
+              </button>
+
+            </div> 
+        </div>
+
+        <div class="carousel-item" data-bs-interval="20000">
+          <div class="row">
+            <img src="./img/sliders/sld1/sld 1.1.png" class="d-block w-100" alt="img-sld 1">
+          </div> 
+        </div>
+
+        <div class="carousel-item" data-bs-interval="20000">
+          <div class="row">
+            <img src="./img/sliders/sld1/sld 1.2.png" class="d-block w-100" alt="img-sld 1">
+
+
+          </div>            
+        </div>
+
+        <div class="carousel-item" data-bs-interval="20000">
+          <div class="row">
+            <img src="./img/sliders/sld1/sld1 city_18hs.jpg" class="d-block w-100" alt="img-sld 1">
+
+            <button type="button" class="btn btn-danger" id="btn-sld" data-bs-toggle="modal" data-bs-target="#modal-city-tour">
+                Más info 
+            </button> 
+
+          </div>  
+        </div>
+
+        <div class="carousel-item" data-bs-interval="20000">
+          <div class="row">
+            <img src="./img/sliders/sld1/sld 1.3.png" class="d-block w-100" alt="img-sld 1">
+          </div>            
+        </div>
+
+      </div>
+
+      <!-- Btn del Slider -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#row3" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden" >Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#row3" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>      
+      
+      <!-- 
+
+        <button type="button" class="btn btn-danger" id="btn-sld" data-bs-toggle="modal" data-bs-target="#modal-interplayas2">
+          Más info
+        </button>
+
+      -->
+
+      <!-- Modal 1 - City Tour-->
+      <div class="modal fade" id="modal-city-tour" tabindex="-1" aria-labelledby="modal-city-tour" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+
+              <img src="./img/elements/city-tour.png" width="100%" alt="" srcset=""> 
+              
+              <div class="row">
+                <button type="button" class="btn btn-danger" id="btn-modal" data-bs-dismiss="modal">
+                  <strong>Volver</strong>
+                </button>
+              </div>
+                                 
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 2 - Interplayas-->
+      <div class="modal fade" id="modal-interplayas" tabindex="-1" aria-labelledby="modal-interplayas" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <div class="modal-body">
+            
+              <img src="./img/sliders/popup/popUp - Interplayas.jpg" width="100%" alt="" srcset=""> 
+              
+              <div class="row">
+                <button type="button" class="btn btn-danger" id="btn-modal" data-bs-dismiss="modal">
+                  <strong>Volver</strong>
+                </button>
+              </div>
+                                 
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 3 -Interplayas -->
+      <div class="modal fade" id="modal-interplayas2" tabindex="-1" aria-labelledby="modal-interplayas2" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <div class="modal-body">
+            
+              <img src="./img/elements/popup0622-interplayas.jpg" width="100%" alt="" srcset=""> 
+              
+              <div class="row">
+                <button type="button" class="btn btn-danger" id="btn-modal" data-bs-dismiss="modal">
+                  <strong>Volver</strong>
+                </button>
+              </div>
+                                 
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- Row 04 Consulta de Recorrido - Select -->
+    <div class="row" id="row4">
+      <div class="col12" id="txt-row4">
+        <h3 class="text-center" > Conocé el recorrido de tu línea de colectivo  </h3>
+      </div>
+      
+      <!-- Inicio Select 1 -->
+      <div class="col-4" id="cont-btn" > 
+        <h4>a UNaM</h4>      
+        <select class="form-select form-select-lg  select" id="select1" size="1">
+                
+          <option value="01-directo">
+            01 - Directo
+          </option>
+          <option value="01-parador">
+            01 - Parador
+          </option>
+          <option value="02-hospital">
+            02 - Hospital
+          </option>
+          <option value="3-urquiza">
+            &nbsp&nbsp3 - Urquiza
+          </option>
+          <option value="03-villa-cabello">
+            03 - Villa Cabello
+          </option>
+          <option value="27-blas-parera">
+            27 - Blas Parera
+          </option>
+          <option value="30-interterminal">
+            30 - Interterminal
+          </option>
+        </select> 
+      </div>
+     
+      <!-- Inicio Select 2 -->
+      <div class="col-4" id="cont-btn" > 
+        <h4>a Quaranta</h4> 
+        <select class="form-select form-select-lg  select" id="select2" size="1">
+          
+          <option value="05-directo-ayacucho">
+            05 - Directo Ayacucho
+          </option>
+          <option value="05-directo-parador">
+            05 - Directo | Parador por Bs. Aires
+          </option>
+          <!--
+          <option value="" style="color:red;">
+            05 - Parador
+          </option>
+          -->
+          <option value="06-directo-ayacucho">
+            06 - Directo Ayacucho
+          </option>
+          <option value="06-bsas">
+            06 - Directo por Bs. Aires
+          </option>
+          <option value="06-parador">
+            06 - Parador
+          </option>
+          <option value="07-lavalle-por-ayacucho">
+            07 - Lavalle por Ayacucho
+          </option>
+          <option value="07-lavalle-por-bs-as">
+            07 - Lavalle por Bs. Aires
+          </option>
+          <option value="/nuevas_mu/08-sta-catalina-leandro-n-alem">
+            08 - Santa Catalina Leandro N Além
+          </option>
+          <option value="/nuevas_mu/08-sta-catalina-t-tacuari">
+            08 - Santa Catalina Tambor de Tacuarí
+          </option>
+          <option value="09-san-martin">
+            09 - San Martín
+          </option>
+          <option value="10-estacion">
+            10 - Estación
+          </option>
+          <option value="/nuevas_mu/29-universitario">
+            29 - Universitario
+          </option>     
+          <option value="30-interterminal">
+            30 - Interterminal
+          </option>     
+          <option value="/nuevas_mu/31-circunvalacion">
+            31 - Circunvalación
+          </option>
+          <option value="/nuevas_mu/32-circunvalacion-nsr">
+            32 - Circunvalación
+          </option>
+          <option value="64-50viviendas">
+            64 - 50 Viviendas
+          </option>
+          <option value="80-san-onofre">
+            80 - San Onofre
+          </option>
+          <option value="81-sanmarcos">
+            81 - San Marcos
+          </option>
+          <option value="83-ba4-cocomarola">
+            83 - B° A4 Av. Cocomarola
+          </option>
+          <option value="85-aeroclub">
+            85 - Aeroclub - Ingar
+          </option>
+          <option value="87-prosol">
+            87 - Prosol
+          </option>
+          <option value="88-prosol">
+            88 - Prosol por Sol de Misiones
+          </option>
+          <option value="90-clubvial">
+            90 - Club Vial
+          </option>
+          <option value="91-bicentenario">
+            91 - Bicentenario
+          </option>
+          <option value="92-centrocorrentino">
+            92 - Centro Correntino
+          </option>
+          <option value="110-hipodromo">
+            110 - Hipódromo
+          </option>
+          <option value="110-itaembeguazu">
+            110 - Itaembé Guazú
+          </option>
+          <option value="110-508v-cruzdelsur">
+            110 - 508 Viviendas por Cruz del Sur
+          </option>
+          <option value="110-508v-itaembeguazu">
+            110 - 508 Viviendas por Itaembé Guazú
+          </option>
+          <option value="110-ruta12">
+            110 - Ruta N12
+          </option>
+          <option value="120-santotomas">
+            120 - Santo Tomás
+          </option>
+          <option value="121-san-isidro">
+            121 - San Isidro
+          </option> 
+          <option value="122-porvenir">
+            122 - Porvenir II
+          </option>
+          <option value="125-aeroclub">
+            125 - Aeroclub
+          </option>
+          <option value="126-eby-pratt">
+            126 - Eby / Pratt
+          </option>
+        </select>             
+      </div>
+
+      <!-- Inicio Select 3 -->
+      <div class="col-4" id="cont-btn" >  
+        <h4>Otros</h4>
+        <select class="form-select form-select-lg  select" id="select3" size="1">       
+          
+          <!-- Diurnos -->
+          <optgroup label="Diurnos">
+            <option value="3-alem">
+              &nbsp&nbsp3 - Além
+            </option> 
+            <option value="4-fatima">
+              &nbsp&nbsp4 - Fátima Ripiera Ñú Porá
+            </option>   
+            <option value="8-hospital">
+              &nbsp&nbsp8 - Hospital
+            </option>   
+            <option value="8-nemesioparma">
+              &nbsp&nbsp8 - Nemesio Parma
+            </option> 
+            <option value="11-centro-civico">
+              11 - Centro Cívico
+            </option>        
+            <option value="11-hospital">
+              11 - Hospital
+            </option>
+            <option value="12-santarita">
+              12 - Santa Rita
+            </option> 
+            <option value="12-san-marcos">
+              12 - San Marcos
+            </option> 
+            <option value="12-san-jorge">
+              12 - San Jorge
+            </option>
+            <option value="/nuevas_mu/13-starita-hospital">
+              13 - Santa Rita Hospital
+            </option>
+            <option value="/nuevas_mu/13-starita-uruguay">
+              13 - Santa Rita Uruguay
+            </option>
+            <option value="/nuevas_mu/14-ituzaingo">
+              14 - Ituzaingó
+            </option>
+            <option value="/nuevas_mu/14-terminal">
+              14 - Terminal
+            </option>
+            <option value="/nuevas_mu/16-c-centrodelconocimiento">
+              16 - Centro del Conocimiento
+            </option>
+            <option value="/nuevas_mu/16-chara-144">
+              16 - Chacra 144
+            </option>
+            <option value="23-c-de-convenciones">
+              23 - Centro de Convenciones
+            </option>
+            <option value="23-estacion">
+              23 - Estación
+            </option>
+            <option value="23-hospital">
+              23 - Hospital
+            </option>
+            <option value="/nuevas_mu/26-hospital">
+              26 - Hospital
+            </option>
+            <option value="26-uruguay">
+              26 - Uruguay
+            </option>
+            <option value="27-itaembeguazu">
+              27 - Itaembé Guazú
+            </option>
+            <option value="27-mercadocentral-centro">
+              27 - Mercado Central - Centro
+            </option>
+            <option value="27-mercadocentral-villacabello">
+              27 - Mercado Central - Villa Cabello
+            </option>
+            <option value="/nuevas_mu/28-508viviendas">
+              28 - 508 Viviendas
+            </option>
+            <option value="/nuevas_mu/28-aeropuerto">
+              28 - Aeropuerto
+            </option>
+            <option value="/nuevas_mu/28-nemesioparma">
+              28 - Nemesio Parma
+            </option>
+            <option value="40-directo-candelaria">
+              40 - Directo Candelaria
+            </option>
+            <option value="/nuevas_mu/201-manantiales">
+              201 - Manantiales
+            </option>
+            <option value="/nuevas_mu/202-itaembe-mini-elbrete">
+              202 - Itaembé Miní - El Brete
+            </option>
+            <option value="203-zapiola">
+              203 - Zapiola
+            </option>
+          </optgroup>
+
+          <!-- Nocturnos -->
+          <optgroup label="Nocturnos">
+            <option value="6-candelaria-nocturno">
+              &nbsp&nbsp6 - Candelaria Nocturno
+            </option>
+            <option value="6-candelaria">
+              &nbsp&nbsp6 - Candelaria
+            </option>          
+            <option value="6-garupa">
+              &nbsp&nbsp6 - Garupá
+            </option>
+            <option value="6-ñupora-por-junin">
+              &nbsp&nbsp6 - Ñu Porá por Junín
+            </option>
+            <option value="6-santa-helena">
+              &nbsp&nbsp6 - Santa Helena
+            </option>
+            <option value="6-santa-ines">
+              &nbsp&nbsp6 - Santa Inés
+            </option>
+            <option value="6-santiago-nocturno">
+              &nbsp&nbsp6 - Santiago Nocturno
+            </option>
+            <option value="/nuevas_mu/7-nocturno-cz">
+              &nbsp&nbsp7 - Nocturno Casimiro
+            </option>
+            <option value="/nuevas_mu/7-nocturno-nsr">
+              &nbsp&nbsp7 - Nocturno nuestra Sra del Rosario
+            </option>
+            <option value="/nuevas_mu/8-hospital">
+              &nbsp&nbsp8 - Hospital
+            </option>
+            <option value="/nuevas_mu/8-nocturno-ig">
+              &nbsp&nbsp8 - Nocturno Itaembé Guazú
+            </option>
+            <option value="/nuevas_mu/8-nocturno-im">
+              &nbsp&nbsp8 - Nocturno Itaembé Miní
+            </option>            
+            <option value="11-nocturno">
+              11 - Nocturno
+            </option>             
+            <option value="12-nocturno">
+              12 - Nocturno
+            </option> 
+            <option value="/nuevas_mu/15-a4">
+              15 - Directo B°A4
+            </option>
+            <option value="/nuevas_mu/15-nocturno">
+              15 - Nocturno
+            </option>
+            <option value="/nuevas_mu/15-sanmarcos">
+              15 - San Marcos
+            </option>
+            <option value="/nuevas_mu/15-sanonofre">
+              15 - San Onofre
+            </option>
+            <option value="/nuevas_mu/15-san-isidro">
+              15 - San Isidrio
+            </option>
+            <option value="17-nocturno">
+              17 - Nocturno
+            </option>
+            <!-- <option value="17-nocturno-convencional">
+              17 - Convencional Nocturno
+            </option> -->
+            <option value="17-zapiola">
+              17 - Zapiola
+            </option>
+            <option value="/nuevas_mu/21-nocturno">
+              21 - Nocturno
+            </option>        
+            <!-- <option value="24-50-viviendas">
+              24 - 50 Viviendas
+            </option>-->
+            <option value="/nuevas_mu/24-nocturno-stacatalina">
+              24 - Nocturno Santa Catalina
+            </option>
+            <option value="25-nocturno">
+              25 - Nocturno
+            </option>
+            <option value="25-ñupora-ultimasalida">
+              25 - Ñu Porá última salida
+            </option>
+            <option value="25-santahelena-ultimasalida">
+              25 - Santa Helena última salida
+            </option>
+            <option value="25-santiago-ultimasalida">
+              25 - Santiago última salida
+            </option>            
+            <option value="/nuevas_mu/26-nocturno">
+              26 - Nocturno
+            </option>
+
+          </optgroup>
+          
+        </select>             
+      </div>
+
+      <!-- Costo Sube -->
+      <div class="col12" id="txt-row4">
+        <h5 class="text-center" > Boleto con SUBE: <strong>$50</strong> | sin SUBE: <strong>$70</strong>  </h5>
+        <h4>Horario Tranferencias de 5:00hs a 22:00hs</h4>
+      </div>
+      
+    </div>    
+    
+    <!-- Row 05 Mapa recorridos -->
+    <div class="" id="row5" style="text-align: center;">
+      <img class='w3-animate-bottom' src="./img/logomu-gris.png" alt="" srcset="" style="margin-top: 200px;">
+    </div>  
+        
+    <!-- Row 06 Espaciadora -->
+    <div class="row" id="row6"></div>
+
+    <!-- Row 07 Slider publicidad -->
+    <div class="carousel slide" id="carouselExampleInterval row7"  data-bs-ride="carousel">
+
+      <div class="carousel-inner w-100">
+
+        <div class="carousel-item active" data-bs-interval="20000">
+          <img src="./img/sliders/sld2/sld 2.1.png" class="d-block w-100" alt="">
+        </div>
+
+        <div class="carousel-item" data-bs-interval="20000">
+          <img src="./img/sliders/sld2/sld 2.2.png" class="d-block w-100" alt="">            
+        </div>
+        <!--
+        <div class="carousel-item" data-bs-interval="20000">
+          <img src="./img/sliders/sld2/sld 2.3.jpg" class="d-block w-100" alt="">            
+        </div>
+        -->
+        <div class="carousel-item" data-bs-interval="20000">
+          <img src="./img/sliders/sld2/sld 2.4.jpg" class="d-block w-100" alt="">            
+        </div>
+
+        <div class="carousel-item" data-bs-interval="20000">
+          <img src="./img/sliders/sld2/sld 2.5.jpg" class="d-block w-100" alt="">            
+        </div>
+ 
+        <div class="carousel-item" data-bs-interval="20000">
+          <img src="./img/sliders/sld2/sld 2.6.png" class="d-block w-100" alt="">            
+        </div>
+  
+        <div class="carousel-item" data-bs-interval="20000">
+          <img src="./img/sliders/sld2/sld 2.7.png" class="d-block w-100" alt="">            
+        </div>
+
+        <div class="carousel-item" data-bs-interval="20000">
+          <img src="./img/sliders/sld2/sld city_18hs.jpg" class="d-block w-100" alt="">            
+        </div>
+
+        <div class="carousel-item" data-bs-interval="20000">
+            <img src="./img/sliders/sld2/sld2.2 - interplayas información 01 23.jpg" class="d-block w-100" alt="">            
+        </div>
+
+      </div>
+    <!-- Fin Slider publicidad -->
+    </div>
+
+    <!-- Row 08 Espacio footer-->
+    <div class="row" id="row8"></div>
+    
+  </div>   
+
+  <!-- Scripts -->
+  <script src="./js/reloj.js"></script>
+  <script src="./js/temperatura.js"></script>  
+  <script src="./js/btn-Select-linea.js"></script>    
+  <script src="./js/security.js"></script>
+  
+
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+.container-fluid, .row, body, #myBody, .d-block{
+    margin: 0px !important;
+    padding: 0px !important;
+}
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+#select1, #select2, #select3{    
+    display: block;
+    width: 100%;
+    border-radius: 20px; 
+    color: #002d2d;   
+    font-weight: 600;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border: #ffffff28;
+    background-color: #fbfbfb;
+}
+
+/* Pop Up Modal*/
+.modal-dialog{
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    max-width: 1080px !important;
+    max-height: 1740px !important;
+    margin: .5rem !important;
+}
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+.modal-body{
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+.modal{
+    padding: 0px !important;
+}
+
+#btn-sld{
+    background-color: #ec1e79;
+    border: unset;
+    font-weight: 600;
+    font-size: 17px;       
+}
+#btn-sld:hover{
+    background-color: #d10c64;
+    border: unset;
+}
+#btn-modal {
+    margin-top: 2%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 35px;
+    font-size: 30px;
+}
+#btn-close {
+    margin-bottom: 2%;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 20px;     
+    color: #fff;
+}
+
+
+
+#row1{
+    background-color: #33b571;
+    height: 50px;
+    text-align: right;
+}
+
+/*-------------Row de Temperatura y Reloj*/
+#row2{
+    height: 150px;
+}
+    #col-row2 img{    
+        padding-top: 2%;
+        background-size: cover;
+}
+
+/*-------------Row de Slider*/
+#row3{
+    background-color: rgb(37, 173, 173);
+    height: 250px;
+}
+
+/*-------------Row de los Select*/
+#row4{
+    /*background-color: rgb(161, 124, 42);*/
+    height: 280px;
+    margin-top: 40px !important;
+    color: #002d2d; 
+}
+    #row4 h3{
+        font-size: 35px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    #row4 h4{
+        text-align: center;
+    }
+    #row4 h5{
+        margin-top: 5px !important;
+        font-size: 30px;
+    }   
+#cont-btn{
+    text-align: center;    
+}
+
+
+/*-------------Recorridos en Mapas*/
+
+#row5{
+    height: 600px;
+}
+    #row5 img{
+        object-fit: contain;
+}
+
+
+/*-------------Row 6 Espaciadora*/
+#row6{
+    height: 40px;
+}
+
+/*-------------Row 7 Publicitario*/
+#row7{
+    height: 500px;
+}
+
+#row8{
+    background-color: #33b571;
+    height: 10px;
+}
+
+
+
+
+/* Animation del map */
+.w3-animate-bottom{
+    position:relative;
+    animation:aparicionMap 1s;
+    margin: 0px;
+    padding: 0px;
+}
+
+@keyframes aparicionMap{
+    from{
+        transform: scale(0.1);              
+    } 
+    to{
+        transform: scale(1);             
+    }
+}
